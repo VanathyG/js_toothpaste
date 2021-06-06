@@ -15,7 +15,7 @@ pageBody.appendChild(storyTitleTag);
  * * Task #4 - Put toothpaste on tooth brush
  */
 
-
+// Define the variables that will be used.
 let items = ["Toothpaste", "Toothbrush"];
 let leftArm = "left arm";
 let rightArm = "right arm";
@@ -36,8 +36,9 @@ function start() {
     putToothpasteInToothbrush();
 }
 
-//taking toothpast
+//taking toothpaste
 function takeToothpaste(){
+    //Calling functions and passing arguments
     moveBodyPart("Stretch", leftArm, 90, "frontways");
     turnWrist("right", 90, "anticlock");
     moveBodyPart("Move", rightArm, 30, "down");
@@ -46,6 +47,7 @@ function takeToothpaste(){
 }
 
 function  openToothPaste(){
+    //Calling functions and passing arguments
     bendElbow(leftElbow, 45, items[0]);
     closeFingersOver(90, toothpasteCap);
     print_and_log("Close thumb and index finger over cap");
@@ -56,6 +58,7 @@ function  openToothPaste(){
 }
 
 function takeToothbrush(){
+    //Calling functions and passing arguments
     moveBodyPart("Stretch", rightArm, 90, "frontways");
     turnWrist(rightWrist, 90, "anticlock");
     moveBodyPart("Move", rightArm, 30, "down");
@@ -64,6 +67,7 @@ function takeToothbrush(){
 }
 
 function putToothpasteInToothbrush(){
+    // A simple function call
     print_and_log("Use the left finger to press the toothpaste");
     tilt(items[0],10, items[1],);
     checkToothpaste();
@@ -73,25 +77,29 @@ function end(){
     print_and_log("AWESOME! YOU ARE DONE!! 🎉🎉🎉🎉");
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function moveBodyPart(action, bodyPart, number, direction){
-        let step_text = action + " your " + bodyPart + " by " + number + " degrees " + direction
+    let step_text = action + " your " + bodyPart + " by " + number + " degrees " + direction
     print_and_log(step_text)
-        readytoContinue();
+    readytoContinue();
 
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function turnWrist(side, degrees, direction){
     let step_text = "Turn the "+ side + " wrist " + degrees + " " + direction;
     print_and_log(step_text)
     readytoContinue();
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function  closeFingersOver(degrees, object){
     let step_text = "Close all your fingers " + degrees + " over " + object;
     print_and_log(step_text)
     readytoContinue();
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function bendElbow(elbow, degrees, object){
     let step_text = "Waiting...";
     if (object == null){
@@ -104,12 +112,14 @@ function bendElbow(elbow, degrees, object){
     readytoContinue();
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function  tilt(object, degrees, direction){
     let step_text = "Tilt " + object + " by " + degrees + " degrees towards " + direction;
     print_and_log(step_text)
     readytoContinue();
 }
 
+// Gets the variables sent as arguments and builds a string combining them
 function checkToothpaste(){
     print_and_log("Press the " + items[0]);
     let answer= prompt('Enter 55 if there is enough toothpaste on the toothbrush. Enter anything else if not', '');
@@ -122,7 +132,7 @@ function checkToothpaste(){
     }
     return;
 }
-
+// Adds +1 to the counter, logs the step to the console and adds a paragraph element to the screen with the text
 function print_and_log (text){
     // Go to the bottom of website
     window.scrollTo(0,document.body.scrollHeight);
@@ -133,6 +143,7 @@ function print_and_log (text){
     pageBody.appendChild(storyContentTag);
 }
 
+//Ask if the user wants to continue or start over.
 function readytoContinue(){
     let answer= prompt('Enter 1 if you are ready to continue or anything else to start over', '1');
     if (answer == "1"){
@@ -141,10 +152,6 @@ function readytoContinue(){
     }
     else{
         console.log("Okay, maybe it was not so simple, let's start over");
-        counter = 0;
-        let storyContentTag = document.createElement("p");
-        storyContentTag.innerText = "\n \n \n";
-        pageBody.appendChild(storyContentTag);
-        location.reload();
+        location.reload(); // Reload the page to reset everything.
     }
 }
