@@ -1,0 +1,21 @@
+@charset "UTF-8";
+body {
+    background-position: 800px 200px;
+    background-repeat: no-repeat;
+  }
+
+  
+  h1 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color:whitesmoke;
+    text-align: center;
+    background-color:rebeccapurple;
+    font-family:fantasy;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 18px;
+    padding-left: 20px;
+  }

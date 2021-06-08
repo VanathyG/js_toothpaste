@@ -1,3 +1,4 @@
+
 // ! Our story Title is "Putting toothpaste on a tooth brush!"
 const storyTitle ="Putting toothpaste on a tooth brush";
 console.log(storyTitle);
@@ -25,6 +26,7 @@ let leftElbow = "left elbow";
 let toothpasteCap = "toothpaste cap";
 // let rightElbow = "right elbow";
 let counter = 0;
+let _continue = false;
 
 start();
 end();
@@ -38,15 +40,19 @@ function start() {
 
 //taking toothpaste
 function takeToothpaste(){
+     //Setting up the backgroud image for this task
+    document.body.style.backgroundImage = "url('image/takingpaste.jpeg')";
     //Calling functions and passing arguments
     moveBodyPart("Stretch", leftArm, 90, "frontways");
     turnWrist("right", 90, "anticlock");
     moveBodyPart("Move", rightArm, 30, "down");
-    closeFingersOver(90, items[0]);
+    closeFingersOver(90, items[0]); 
     // bendElbow(leftElbow, 45, null);
 }
 
 function  openToothPaste(){
+    //Setting up the backgroud image for this task
+    document.body.style.backgroundImage = "url('image/opentoothpaste.png')";
     //Calling functions and passing arguments
     bendElbow(leftElbow, 45, items[0]);
     closeFingersOver(90, toothpasteCap);
@@ -58,6 +64,8 @@ function  openToothPaste(){
 }
 
 function takeToothbrush(){
+    //Setting up the backgroud image for this task
+    document.body.style.backgroundImage = "url('image/taketoothbrush.jpeg')";
     //Calling functions and passing arguments
     moveBodyPart("Stretch", rightArm, 90, "frontways");
     turnWrist(rightWrist, 90, "anticlock");
@@ -67,6 +75,8 @@ function takeToothbrush(){
 }
 
 function putToothpasteInToothbrush(){
+    //Setting up the backgroud image for this task
+    document.body.style.backgroundImage = "url('image/puttingtoothpaste.jpeg')";
     // A simple function call
     print_and_log("Use the left finger to press the toothpaste");
     tilt(items[0],10, items[1],);
@@ -121,16 +131,16 @@ function  tilt(object, degrees, direction){
 
 // Gets the variables sent as arguments and builds a string combining them
 function checkToothpaste(){
-    print_and_log("Press the " + items[0]);
-    let answer= prompt('Enter 55 if there is enough toothpaste on the toothbrush. Enter anything else if not', '');
-    if (answer == "55"){
-        console.log("Awesome. There is enough toothpaste on the toothbrush");
-    }
-    else{
-        console.log("Going back for more toothpaste");
-        checkToothpaste();
-    }
-    return;
+    // print_and_log("Press the " + items[0]);
+    // let answer= prompt('Enter 55 if there is enough toothpaste on the toothbrush. Enter anything else if not', '');
+    // if (answer == "55"){
+    //     console.log("Awesome. There is enough toothpaste on the toothbrush");
+    // }
+    // else{
+    //     console.log("Going back for more toothpaste");
+    //     checkToothpaste();
+    // }
+    // return;
 }
 // Adds +1 to the counter, logs the step to the console and adds a paragraph element to the screen with the text
 function print_and_log (text){
@@ -141,17 +151,21 @@ function print_and_log (text){
     let storyContentTag = document.createElement("p");
     storyContentTag.innerText = counter + " - " + text;
     pageBody.appendChild(storyContentTag);
+
 }
 
-//Ask if the user wants to continue or start over.
-function readytoContinue(){
-    let answer= prompt('Enter 1 if you are ready to continue or anything else to start over', '1');
-    if (answer == "1"){
-        console.log("Great, let's move on");
-        return;
-    }
-    else{
-        console.log("Okay, maybe it was not so simple, let's start over");
-        location.reload(); // Reload the page to reset everything.
-    }
+
+async function readytoContinue(){
+
+    // let answer= prompt('Enter 1 if you are ready to continue or anything else to start over', '1');
+    // if (answer == "1"){
+    //     console.log("Great, let's move on");
+    //     return;
+    // }
+    // else{
+    //     console.log("Okay, maybe it was not so simple, let's start over");
+    //     location.reload(); // Reload the page to reset everything.
+    // }
 }
+
+
