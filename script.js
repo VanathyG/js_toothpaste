@@ -137,7 +137,7 @@ function checkToothpaste(){
 // Adds +1 to the counter, logs the step to the console and adds a paragraph element to the screen with the text
 function print_and_log (text){
     counter++;
-    var delayInMilliseconds = counter * 2000;
+    var delayInMilliseconds = counter * 2000; //Every line gets printed two seconds after the previous;
     //Print the steps one by one
     setTimeout(function() {
         // Go to the bottom of website
