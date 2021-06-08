@@ -131,41 +131,26 @@ function  tilt(object, degrees, direction){
 
 // Gets the variables sent as arguments and builds a string combining them
 function checkToothpaste(){
-    // print_and_log("Press the " + items[0]);
-    // let answer= prompt('Enter 55 if there is enough toothpaste on the toothbrush. Enter anything else if not', '');
-    // if (answer == "55"){
-    //     console.log("Awesome. There is enough toothpaste on the toothbrush");
-    // }
-    // else{
-    //     console.log("Going back for more toothpaste");
-    //     checkToothpaste();
-    // }
-    // return;
+    print_and_log("Press the " + items[0]);
+
 }
 // Adds +1 to the counter, logs the step to the console and adds a paragraph element to the screen with the text
 function print_and_log (text){
-    // Go to the bottom of website
-    window.scrollTo(0,document.body.scrollHeight);
     counter++;
-    console.log(text);
-    let storyContentTag = document.createElement("p");
-    storyContentTag.innerText = counter + " - " + text;
-    pageBody.appendChild(storyContentTag);
-
+    var delayInMilliseconds = counter * 2000;
+    //Print the steps one by one
+    setTimeout(function() {
+        // Go to the bottom of website
+        window.scrollTo(0,document.body.scrollHeight);
+        console.log(text);
+        let storyContentTag = document.createElement("p");
+        storyContentTag.innerText = text;
+        pageBody.appendChild(storyContentTag);
+    }, delayInMilliseconds);
 }
 
-
-async function readytoContinue(){
-
-    // let answer= prompt('Enter 1 if you are ready to continue or anything else to start over', '1');
-    // if (answer == "1"){
-    //     console.log("Great, let's move on");
-    //     return;
-    // }
-    // else{
-    //     console.log("Okay, maybe it was not so simple, let's start over");
-    //     location.reload(); // Reload the page to reset everything.
-    // }
+function readytoContinue(){
+    // Is there a way to delay the execution until the user confirms he/she is ready to continue?
 }
 
 
