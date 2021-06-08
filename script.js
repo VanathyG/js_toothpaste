@@ -5,6 +5,8 @@ console.log(storyTitle);
 //* add an h1 to our html page, then put our title into it.
 let pageBody = document.querySelector("body");
 let storyTitleTag = document.createElement("h1");
+//Setting up the backgroud image for this task
+document.body.style.backgroundImage = "url('image/puttingtoothpaste.jpeg')";
 storyTitleTag.innerText = storyTitle;
 pageBody.appendChild(storyTitleTag);
 
@@ -40,8 +42,6 @@ function start() {
 
 //taking toothpaste
 function takeToothpaste(){
-     //Setting up the backgroud image for this task
-    document.body.style.backgroundImage = "url('image/takingpaste.jpeg')";
     //Calling functions and passing arguments
     moveBodyPart("Stretch", leftArm, 90, "frontways");
     turnWrist("right", 90, "anticlock");
@@ -51,8 +51,6 @@ function takeToothpaste(){
 }
 
 function  openToothPaste(){
-    //Setting up the backgroud image for this task
-    document.body.style.backgroundImage = "url('image/opentoothpaste.png')";
     //Calling functions and passing arguments
     bendElbow(leftElbow, 45, items[0]);
     closeFingersOver(90, toothpasteCap);
@@ -64,8 +62,6 @@ function  openToothPaste(){
 }
 
 function takeToothbrush(){
-    //Setting up the backgroud image for this task
-    document.body.style.backgroundImage = "url('image/taketoothbrush.jpeg')";
     //Calling functions and passing arguments
     moveBodyPart("Stretch", rightArm, 90, "frontways");
     turnWrist(rightWrist, 90, "anticlock");
@@ -75,8 +71,6 @@ function takeToothbrush(){
 }
 
 function putToothpasteInToothbrush(){
-    //Setting up the backgroud image for this task
-    document.body.style.backgroundImage = "url('image/puttingtoothpaste.jpeg')";
     // A simple function call
     print_and_log("Use the left finger to press the toothpaste");
     tilt(items[0],10, items[1],);
